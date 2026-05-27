@@ -33,6 +33,13 @@ jobs:
         
       - name: Install dependencies
         run: pip install pillow markdown
+
+      - name: Unpack zips
+        run: |
+          shopt -s nullglob
+          for file in *.zip; do
+            unzip -u "$file"
+          done
         
       - name: Build
         run: python scripts/build_site.py
