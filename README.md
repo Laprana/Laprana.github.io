@@ -4,13 +4,9 @@ Follow these instructions to set up your own MSE Hub.
 
 ## Prerequisites
 
-### Install Github Desktop
+### Install Github Desktop (optional)
 
 This isn't strictly necessary, but promise me, it'll make your life a lot easier. You can get GH Desktop [here](https://desktop.github.com/download/).
-
-### Install Python
-
-This one *is* strictly necessary, as the script that builds the entire site is written in Python. You can get it [here](https://www.python.org/downloads/).
 
 ## Step 1: Fork me
 
@@ -48,7 +44,9 @@ Once each of these options is filled out, click OK and save the set file as "\<s
 - **\<code\>.txt**, which is irrelevant.
 - **\<code\>-files**, a directory containing all the files necessary to publish your set onto your hub.
 
-## Step 3: Generating the site
+## Step 3: Uploading files
+
+### Using Github Desktop
 
 Surprisingly, you're almost done! Copy the "\<code\>-files" folder (the entire directory) into the "sets" folder of your GitHub checkout. Open Github Desktop, and you should see that directory in the "Changes" sidebar. Click Repository => Open in Terminal (or Command Prompt for Windows machines).
 
@@ -56,22 +54,23 @@ In the opened terminal, execute the following commands:
 
 ```
 git config --global http.postBuffer 157286400
-python3 -m pip install pillow markdown
 ```
 
-This updates your buffer so you can upload all of your images with no timeout issues and installs required packages. Otherwise, git sometimes gets tired and quits somewhat arbitrarily. You only need to do this ONCE. Afterwards, execute:
+This updates your buffer so you can upload all of your images with no timeout issues. Otherwise, git sometimes gets tired and quits somewhat arbitrarily. You only need to do this ONCE.
 
-```
-python3 scripts/build_site.py
-```
-
-> :memo: **Note:** If at this point `python3` prompts you to install through the Windows Store, do so. It's the path of least resistance.
-
-> :memo: **Note:** If `python3` can't be found, try running the same command with `py` or `python` instead.
-
-This will spit out a bunch of confirmation lines for different site elements being built. The first time it runs, it will take a few minutes to process through each image. Subsequent runs will be much quicker, unless you update the images with new files. After the command finishes, navigate back to Github desktop and you should see plenty of new artifacts in the "Changes" sidebar. In the bottom left, type a title for your change (this is for versioning), then click "Commit to main". Once you've done so, a big "Push origin" button will appear in the middle of the window. Click that, wait for the push to finish, and voila! Your site is deployed.
+In the bottom left, type a title for your change (this is for versioning), then click "Commit to main". Once you've done so, a big "Push origin" button will appear in the middle of the window. Click that, wait for the push to finish, and voila! Your site is deployed.
 
 To track the process of your site deployment, navigate to https://github.com/USERNAME/USERNAME.github.io/actions, replacing USERNAME with your Github username. Each time you push to origin, a deployment action will trigger, and once that's complete your site will be visible at https://\<username\>.github.io.
+
+### Using github.com
+
+Go to the [sets folder on your github repo](../../tree/main/sets) and in the top right click "add file" then ["upload files"](../../upload/main/sets) (note: the links here go to the current repo, open this page on your fork and they will refer to the right location). Then drag and drop your folder in there. It's also allowed to upload them using the file picker, for this it's possible to first convert it into a zip file instead of selecting the folder.
+
+## Ensure github pages is configured correctly
+
+Go to the settings page of your repo and then select ["Pages"](../../settings/pages) from the left menu. Ensure the setting "Source" in the "Build and Deployment" section is set to "GitHub Actions":
+
+<img width="266" height="115" alt="image" src="https://github.com/user-attachments/assets/91008dad-6060-4bec-b019-f4b7222636f4" />
 
 ## Future MSE Set Hub Updates
 
