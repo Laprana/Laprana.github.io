@@ -18,13 +18,7 @@ On the next page, **change the "Repository name" field** to \<your-github-userna
 
 ![Fork part 2](https://github.com/magictheegg/mse-hub-readme/blob/main/fork-part-two.png?raw=true)
 
-Once the fork is created, you'll see the code in Github. Now it's time to move to Github desktop.
-
-Once you've logged into Github Desktop, click File => Clone repository ... and you should see your forked repository in the repo list. Click it, then choose clone. When the "How are you planning to use this fork?" modal pops up, select "For my own purposes," then Continue.
-
-![How are you planning to use this fork?](https://github.com/magictheegg/mse-hub-readme/blob/main/how-fork.png?raw=true)
-
-Finally, in the bar along the top, select "Fetch origin" to pull the origin into your forked repo.
+Once the fork is created, you'll see the code in Github.
 
 ## Step 2: Exporting set files
 
@@ -47,6 +41,12 @@ Once each of these options is filled out, click OK and save the set file as "\<s
 ## Step 3: Uploading files
 
 ### Using Github Desktop
+
+Open up Github Desktop. Once you've logged into Github Desktop, click File => Clone repository ... and you should see your forked repository in the repo list. Click it, then choose clone. When the "How are you planning to use this fork?" modal pops up, select "For my own purposes," then Continue.
+
+![How are you planning to use this fork?](https://github.com/magictheegg/mse-hub-readme/blob/main/how-fork.png?raw=true)
+
+Finally, in the bar along the top, select "Fetch origin" to pull the origin into your forked repo.
 
 Surprisingly, you're almost done! Copy the "\<code\>-files" folder (the entire directory) into the "sets" folder of your GitHub checkout. Open Github Desktop, and you should see that directory in the "Changes" sidebar. Click Repository => Open in Terminal (or Command Prompt for Windows machines).
 
