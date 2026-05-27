@@ -37,6 +37,7 @@ jobs:
       - name: Unpack zips
         run: |
           shopt -s nullglob
+          cd sets
           for file in *.zip; do
             unzip -u "$file"
           done
